@@ -1,0 +1,213 @@
+<!--
+  Copyright © 2017-2019 HERE Europe B.V.
+  Licensed under Apache 2.0, see full license in LICENSE
+  SPDX-License-Identifier: Apache-2.0
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>harp.gl Terrain Datasource</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+
+    <style>
+      html,
+      button,
+      input,
+      textarea,
+      h2, h4,
+      p {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Fix for macOS Mojave Dark Mode */
+      select,
+      button {
+        background-color: #FFFFFF;
+      }
+
+      /* dat.GUI styling fixes */
+      .dg .c select {
+        width: 100% !important;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+      }
+
+      .cesium-ion-logo {
+        display: none;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 170px;
+        height: auto;
+	    color: #FFFFFF;
+	    font-weight: bold;
+      }
+
+      .data-attribution {
+        position: absolute;
+        bottom: 15px;
+        right: 18px;
+      }
+
+      .attribution-trigger {
+        padding: 0 1px 2px 1px;
+        background-color: transparent;
+        border: none;
+        padding: 4px 7px;
+        color: #FFFFFF;
+        font-size: 14px;
+        border: 1px solid #FFFFFF;
+        border-radius: 3px;
+      }
+
+      .attribution-trigger.active {
+        opacity: 0.6;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .attribution-popup {
+        display: none;
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+        width: 500px;
+        max-height: 500px;
+        overflow-y: auto;
+        padding: 8px 40px 30px 0;
+        box-sizing: border-box;
+        background-color: #FFFFFF;
+        border-radius: 3px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .attribution-popup ul > li + li {
+        margin-top: 8px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <canvas id="map"></canvas>
+
+    <div class="footer">
+	  <div class="cesium-ion-logo"><p>CESIUM ion</p></div>
+
+      <div class="data-attribution">
+        <button class="attribution-trigger">Data Attribution</button>
+        <div class="attribution-popup">
+          <div class="cesium-attribution">
+            <ul>
+              <li>
+                NZ 8m Digital Elevation Model (2012)<br>
+                LINZ - Land Information New Zealand
+              </li>
+              <li>
+                Digital Elevation Model (DEM) of Australia derived from LiDAR 5 Metre Grid<br>
+                Based on Geoscience Australia material
+              </li>
+              <li>
+                LIDAR Composite DTM - 1m & 2m<br>
+                © Environment Agency copyright and/or database right 2015. All rights reserved.
+              </li>
+              <li>
+                Digital Elevation Model over Europe (EU-DEM)<br>
+                Produced using Copernicus data and information funded by the European Union - EU-DEM layers
+              </li>
+              <li>
+                CGIAR SRTM<br>
+                © CGIAR-CSI
+              </li>
+              <li>
+                GTOPO30, SRTM, and National Elevation Dataset (NED)<br>
+                Data available from the U.S. Geological Survey
+              </li>
+            </ul>
+          </div>
+        <!--
+          <div class="nextzen-attribution">
+            <ul>
+              <li>
+                ArcticDEM terrain data DEM(s) were created from DigitalGlobe, Inc., imagery and
+                funded under National Science Foundation awards 1043681, 1559691, and 1542736
+              </li>
+              <li>
+                Australia terrain data © Commonwealth of Australia (Geoscience Australia) 2017
+              </li>
+              <li>
+                Austria terrain data © offene Daten Österreichs – Digitales Geländemodell (DGM)
+                Österreich
+              </li>
+              <li>
+                Canada terrain data contains information licensed under the Open Government
+                Licence – Canada
+              </li>
+              <li>
+                Europe terrain data produced using Copernicus data and information funded by the
+                European Union - EU-DEM layers
+              </li>
+              <li>
+                Global ETOPO1 terrain data U.S. National Oceanic and Atmospheric Administration
+              </li>
+              <li>
+                Mexico terrain data source: INEGI, Continental relief, 2016
+              </li>
+              <li>
+                New Zealand terrain data Copyright 2011 Crown copyright (c) Land Information New
+                Zealand and the New Zealand Government (All rights reserved)
+              </li>
+              <li>
+                Norway terrain data © Kartverket
+              </li>
+              <li>
+                United Kingdom terrain data © Environment Agency copyright and/or database right
+                2015. All rights reserved
+              </li>
+              <li>
+                United States 3DEP (formerly NED) and global GMTED2010 and SRTM terrain data
+                courtesy of the U.S. Geological Survey
+              </li>
+            </ul>
+          </div>
+        -->
+          <div class="sample-attribution">
+            <ul>
+              <li>
+                <a href="https://www.sciencebase.gov/catalog/item/581d2183e4b08da350d533d9">
+                  U.S. Geological Survey, 20151228, USGS NED 1/3 arc-second n44w111 1 x 1 degree ArcGrid 2015: U.S. Geological Survey.
+                </a>
+              </li>
+              <li>
+                DEM data is processed and converted to optimized mesh using
+                <a href="https://github.com/heremaps/tin-terrain">TIN Terrain</a> by HERE Technologies.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./dist/three/build/three.js"></script>
+    <script type="text/javascript" src="./dist/app.bundle.js"></script>
+  </body>
+</html>
