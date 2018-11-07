@@ -59,6 +59,8 @@ function initializeMapView (canvas) {
 
   mapView.resize(window.innerWidth, window.innerHeight)
 
+  mapView.zoomLevelBias = 0.5
+
   window.addEventListener('resize', () => {
     mapView.resize(window.innerWidth, window.innerHeight)
   })
@@ -121,10 +123,10 @@ fetchWorldTerrainToken().then(worldTerrainToken => {
   nextzenDataSource.enabled = uiOptions.dataset === datasetList[2]
 
   mapView.setCameraGeolocationAndZoom(
-    new GeoCoordinates(43.818897519592596, -110.76214288570348),
+    new GeoCoordinates(43.751997519592596, -110.73214288570348),
     12
   )
-  mapView.camera.rotateX(THREE.Math.degToRad(40))
+  mapView.camera.rotateX(THREE.Math.degToRad(35))
 
   const gui = new dat.GUI({width: 300})
   const datasetController = gui.add(uiOptions, 'dataset', datasetList)
