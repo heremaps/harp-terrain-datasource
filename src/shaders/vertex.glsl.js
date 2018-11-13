@@ -36,7 +36,7 @@ void main() {
     vec3 decNormal = oct_to_float32x3(floatOctNormal);
     vNormal = decNormal;
   } else {
-    vNormal = normalMatrix * normal;
+    vNormal = normal;
   }
 
   vUv = uv;

@@ -56,7 +56,7 @@ const defaultColorSteps = [
 ]
 
 const defaultLighting = new THREE.Vector3(0.7, 0, 0.5)
-const cesiumLighting = new THREE.Vector3(0, 0, 1)
+const cesiumLighting = new THREE.Vector3(0, -1, 0)
 
 export default function getTileMaterial (mapTile, decodedTile, options) {
   switch (options.style) {
