@@ -11,21 +11,30 @@ import { Tile } from '@here/harp-mapview'
 import { TileFactory } from '@here/harp-mapview-decoder'
 
 export class TerrainTileFactory extends TileFactory {
-  constructor (getTileMaterial) {
+  constructor (options) {
     super(TerrainTile)
-    this.getTileMaterial = getTileMaterial
+    this.options = options
   }
 
   create (dataSource, tileKey) {
-    return new TerrainTile(dataSource, tileKey, this.getTileMaterial)
+    return new TerrainTile(dataSource, tileKey, this.options)
   }
 }
 
 class TerrainTile extends Tile {
-  constructor (dataSource, tileKey, getTileMaterial) {
+  constructor (dataSource, tileKey, options) {
     super(dataSource, tileKey)
 
-    this.getTileMaterial = getTileMaterial
+    this.getTileMaterial = options.getTileMaterial
+    this.getCustomObjects = options.getCustomObjects
+
+    this.decodedTileGeometry = null
+    this.scaledPositionArray = null
+    this.tileSize = this.getTileSize(
+      this.tileKey,
+      this.projection,
+      this.dataSource.getTilingScheme()
+    )
   }
 
   generateTileMaterial (decodedTile) {
@@ -60,33 +69,43 @@ class TerrainTile extends Tile {
     return scaledPositionArray
   }
 
-  createObjects (decodedTile, objects) {
-    this.generateTileMaterial(decodedTile).then((material) =>
-      this.createTileObjects(material, decodedTile, objects)
-    )
+  findVertexAttribute (attributeArray, name) {
+    return attributeArray.find(attr => attr.name === name)
   }
 
-  createTileObjects (material, decodedTile, objects) {
-    const tileSize = this.getTileSize(
-      this.tileKey,
-      this.projection,
-      this.dataSource.getTilingScheme()
+  createObjects (decodedTile, objects) {
+    this.decodedTileGeometry = decodedTile.geometries[0]
+
+    const vertexPosition = this.findVertexAttribute(this.decodedTileGeometry.vertexAttributes, 'position')
+    const buffer = vertexPosition.buffer
+    const metadata = vertexPosition.metadata
+
+    this.scaledPositionArray = this.scaleVertices(buffer, metadata, this.tileSize)
+
+    this.generateTileMaterial(decodedTile).then((material) =>
+      this.createTileObjects(material, decodedTile.geometries[0], objects)
     )
-    const srcGeometry = decodedTile.geometries[0]
+    if (this.getCustomObjects) {
+      Promise.resolve(this.getCustomObjects(this))
+        .then(() => this.dataSource.requestUpdate())
+    }
+  }
+
+  createTileObjects (material, decodedTileGeometry, objects) {
     const tileGeometry = new THREE.BufferGeometry()
     const tileMesh = new THREE.Mesh(tileGeometry, material)
 
-    srcGeometry.vertexAttributes.forEach((attr) => {
+    decodedTileGeometry.vertexAttributes.forEach((attr) => {
       const buffer =
         attr.name === 'position'
-          ? this.scaleVertices(attr.buffer, attr.metadata, tileSize)
+          ? this.scaledPositionArray
           : attr.buffer
 
       tileGeometry.addAttribute(attr.name, new THREE.BufferAttribute(buffer, attr.itemCount))
     })
 
-    if (srcGeometry.index !== undefined) {
-      tileGeometry.setIndex(new THREE.BufferAttribute(srcGeometry.index.buffer, 1))
+    if (decodedTileGeometry.index !== undefined) {
+      tileGeometry.setIndex(new THREE.BufferAttribute(decodedTileGeometry.index.buffer, 1))
     }
 
     if (!tileGeometry.attributes.normal && !tileGeometry.attributes.octNormal) {
@@ -98,6 +117,53 @@ class TerrainTile extends Tile {
     objects.push(tileMesh)
 
     this.dataSource.requestUpdate()
+  }
+
+  calculateLocalDisplacement (geoCoordinates) {
+    const worldCoordinates = this.projection.projectPoint(geoCoordinates, new THREE.Vector3())
+    const localCoordinates = worldCoordinates.sub(this.center)
+
+    const indexBuffer = this.decodedTileGeometry.index.buffer
+    const scaledPositionArray = this.scaledPositionArray
+    const displacement = new THREE.Vector3(0, 0, 0)
+
+    for (let i = 0; i < indexBuffer.length; i += 3) {
+      const index1 = indexBuffer[i] * 3
+      const index2 = indexBuffer[i + 1] * 3
+      const index3 = indexBuffer[i + 2] * 3
+
+      const v1 = new THREE.Vector3(scaledPositionArray[index1], scaledPositionArray[index1 + 1], scaledPositionArray[index1 + 2])
+      const v2 = new THREE.Vector3(scaledPositionArray[index2], scaledPositionArray[index2 + 1], scaledPositionArray[index2 + 2])
+      const v3 = new THREE.Vector3(scaledPositionArray[index3], scaledPositionArray[index3 + 1], scaledPositionArray[index3 + 2])
+
+      const triangle = new THREE.Triangle(v1, v2, v3)
+      const planeTriangle = new THREE.Triangle(
+        v1.clone().setZ(0),
+        v2.clone().setZ(0),
+        v3.clone().setZ(0)
+      )
+
+      if (planeTriangle.containsPoint(localCoordinates)) {
+        const rationVector = planeTriangle.getBarycoord(localCoordinates, new THREE.Vector3())
+
+        const displacementZ = rationVector.x * triangle.a.z + rationVector.y * triangle.b.z + rationVector.z * triangle.c.z
+
+        displacement.set(localCoordinates.x, localCoordinates.y, displacementZ)
+
+        break
+      }
+    }
+
+    return displacement
+  }
+
+  addObject (geoCoordinates, object) {
+    if (this.geoBox.contains(geoCoordinates)) {
+      object.displacement = this.calculateLocalDisplacement(geoCoordinates)
+
+      this.registerTileObject(object)
+      this.objects.push(object)
+    }
   }
 }
 

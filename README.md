@@ -45,6 +45,8 @@ new TerrainDataSource(TerrainDataSourceOptions)
 - `decoderOptions?`: [PNGDecoderOptions](#PNGDecoderOptions)
 - `getDisplayZoomLevel?`: (level: number) → number
   Generates custom zoom level for the data source depending on map's zoom.
+- `getCustomObjects?`:(terrainTile: [TerrainTile](https://github.com/heremaps/harp-terrain-datasource/blob/master/src/terrain-tile.js)) → Promise | void
+  Allows users to add markers on a tile, with custom geocoordinates and shapes.
 
 ##### PNGDecoderOptions
 
@@ -224,7 +226,7 @@ function initializeMapView (canvas) {
 
 The canvas DOM element is the only argument for this function. `new MapControls(mapView)` adds user-interactions to a map, so you can pan, zoom and tilt.
 
-And the last function creates a terrain data source.
+The last function creates a terrain data source and allows users to add custom objects. 
 
 ```javascript
 function createDataSource (worldTerrainToken) {
@@ -235,6 +237,15 @@ function createDataSource (worldTerrainToken) {
     fetchTile: (tileKey) => fetchTile(tileKey, worldTerrainToken),
     getTileMaterial: () => {
       return Promise.resolve(new THREE.MeshNormalMaterial())
+    },
+    getCustomObjects: (terrainTile) => {
+      const geoCoordinates = new GeoCoordinates(43.818897519592596, -110.76214288570348)
+      const geomentry = new THREE.BoxGeometry(terrainTile.tileSize.x / 20, terrainTile.tileSize.x / 20, terrainTile.tileSize.x / 20)
+    
+      const material = new THREE.MeshBasicMaterial({ color: 'red' })
+      const marker = new THREE.Mesh(geomentry, material)
+    
+      terrainTile.addObject(geoCoordinates, marker)
     }
   })
 }
@@ -247,6 +258,8 @@ You can use any THREE.js material for the tiles, in this case it's  `MeshNormalM
 `concurrentDecoderServiceName` takes the quantized mesh decoder id you imported in the first step.
 
 `concurrentDecoderScriptUrl` option specifies URL where to fetch a decoder code from, it will be run in a worker. You're going to create decoder later.
+
+`getCustomObjects` option allows users to add custom markers on top of terrrain tile.
 
 See [API Reference](#api-reference-1) for the full Datasource specs.
 

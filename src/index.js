@@ -30,7 +30,7 @@ export class TerrainDataSource extends TileDataSource {
     }
 
     const tileFactory = new TerrainTileFactory(
-      options.getTileMaterial
+      options
     )
 
     super(tileFactory, {

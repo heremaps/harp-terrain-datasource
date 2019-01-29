@@ -33,6 +33,7 @@ export interface TerrainDataSourceOptions {
 	fetchTile: (tileKey: TileKey) => Promise<ArrayBuffer>;
 	getTileMaterial?: (mapTile: Tile, decodedTile: DecodedTile) => Material;
 	decoderOptions?: PNGDecoderOptions | QuantizedMeshDecoderOptions;
+	getCustomObjects?: (terrainTile: TerrainTile) => Promise | void;
 }
 
 export class TerrainDataSource {
