@@ -1,6 +1,6 @@
 {
   "name": "@here/harp-terrain-datasource-example",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./src/app.js",
   "scripts": {
@@ -9,22 +9,29 @@
   },
   "keywords": [],
   "author": {
-    "name": "HERE Global B.V. and its affiliate(s)",
+    "name": "HERE Europe B.V.",
     "url": "https://here.com"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:heremaps/harp-terrain-datasource.git"
+  },
+  "license": "Apache-2.0",
   "devDependencies": {
     "copy-webpack-plugin": "^4.5.2",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
-    "@here/harp-geoutils": "^0.2.53",
-    "@here/harp-map-controls": "^0.1.48",
-    "@here/harp-mapview": "^0.7.77",
+    "@here/harp-geoutils": "^0.3.1",
+    "@here/harp-map-controls": "^0.2.1",
+    "@here/harp-mapview": "^0.8.1",
     "@here/harp-terrain-datasource": "github:heremaps/harp-terrain-datasource",
     "dat.gui": "^0.7.2",
     "three": "^0.96.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
