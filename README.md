@@ -1,9 +1,11 @@
-# harp.gl Terrain Datasource
+# harp.gl Terrain Datasource [![Build Status](https://travis-ci.com/heremaps/harp-terrain-datasource.gl.svg?token=XqJjRxFbW25Pc73LNRB9&branch=master)](https://travis-ci.com/heremaps/harp-terrain-datasource.gl)
 
 Render terrain data encoded using [Quantized Mesh](https://github.com/AnalyticalGraphicsInc/quantized-mesh) or [Mapzen Terrarium](https://mapzen.com/documentation/terrain-tiles/formats/#terrarium).
 
+For installation, run:
+
 ```bash
-npm i heremaps/harp-terrain-datasource
+yarn add @here/harp-terrain-datasource
 ```
 
 Terrain Datasource is a module of [harp.gl](https://github.com/heremaps/harp.gl) renderer.
@@ -12,7 +14,7 @@ See [TIN Terrain](https://github.com/heremaps/tin-terrain) for generating tiles 
 
 ### See Also
 
-* [harp.gl](https://github.com/heremaps/harp.gl). 3D map rendering engine based on THREE.js.
+* [harp.gl](https://github.com/heremaps/harp.gl). 3D map rendering engine based on three.js.
 
 * [TIN Terrain](https://github.com/heremaps/tin-terrain). CLI tool to generate quantized mesh and OBJ tiles out of raster data.
 
@@ -58,7 +60,7 @@ new TerrainDataSource(TerrainDataSourceOptions)
 
 ### Elevation Material
 
-Terrain Datasource comes with THREE.js material for elevation based styling. You can specify different colors for different altitudes.
+Terrain Datasource comes with three.js material for elevation based styling. You can specify different colors for different altitudes.
 
 ```js
 import { ElevationMaterial } from '@here/harp-terrain-datasource/src/terrain-tile'
@@ -96,21 +98,13 @@ See also TypeScript typings in [./src/index.d.ts](./src/index.d.ts)
 
 ### Getting Started Guide
 
-Here you're going to create from scratch a minimal harp.gl application which uses Terrain Datasource to render [Cesium World Terrain](https://cesium.com/content/cesium-world-terrain/).
+Following these instructions you can create from scratch a minimal application using `harp.gl` and Terrain Datasource to render [Cesium World Terrain](https://cesium.com/content/cesium-world-terrain/).
 
 #### Dependencies
 
 First you're going to need a [Cesium ion](https://cesium.com/ion/) access token, go ahead and sign up.
 
-Create a new folder and install dev-dependensies.
-
-```bash
-mkdir terrain-app && cd terrain-app
-npm init -y
-npm i --save-dev webpack webpack-cli webpack-dev-server copy-webpack-plugin
-```
-
-Now install harp.gl modules along with the Terrain Datasource and THREE.js.
+This project uses [yarn](https://yarnpkg.com/en/) to organize its dependencies.
 
 ```bash
 npm i @here/harp-mapview @here/harp-geoutils @here/harp-map-controls heremaps/harp-terrain-datasource three
@@ -134,7 +128,7 @@ npm i @here/harp-mapview @here/harp-geoutils @here/harp-map-controls heremaps/ha
 <script type="text/javascript" src="./dist/app.bundle.js"></script>
 ```
 
-Later you'll configure webpack to populate `./dist` folder. harp.gl modules rely on THREE.js in the global scope, so we put it right in `index.html`.
+Later you'll configure webpack to populate `./dist` folder. harp.gl modules rely on three.js in the global scope, so we put it right in `index.html`.
 
 #### JavaScript
 
@@ -244,7 +238,7 @@ function createDataSource (worldTerrainToken) {
 
 Note that function takes Cesium endpoint token as the only argument and passes it to the `fetchTile` function which you created earlier.
 
-You can use any THREE.js material for the tiles, in this case it's  `MeshNormalMaterial` which colors the mesh depending on a vertex normal direction.
+You can use any three.js material for the tiles, in this case it's  `MeshNormalMaterial` which colors the mesh depending on a vertex normal direction.
 
 `concurrentDecoderServiceName` takes the quantized mesh decoder id you imported in the first step.
 
@@ -280,7 +274,7 @@ importScripts('three/build/three.js')
 require('@here/harp-terrain-datasource/src/quantized-mesh/tile-decoder-worker')
 ```
 
-harp.gl modules require THREE.js in the global space, thus `importScripts('three/build/three.js')`. Second line imports all needed code to setup a quantized mesh decoder worker and it must be `require()` , not `import`, in order to be loaded after THREE.js.
+harp.gl modules require three.js in the global space, thus `importScripts('three/build/three.js')`. Second line imports all needed code to setup a quantized mesh decoder worker and it must be `require()` , not `import`, in order to be loaded after three.js.
 
 #### Webpack Configuration
 
@@ -332,7 +326,7 @@ module.exports = [
 ]
 ```
 
-The configuration has two modules, one for the decoder worker and one for the main app. Bundled files will end up in `./dist` folder along with THREE.js build which is copied from `node_modules/three` using `CopyWebpackPlugin`.
+The configuration has two modules, one for the decoder worker and one for the main app. Bundled files will end up in `./dist` folder along with three.js build which is copied from `node_modules/three` using `CopyWebpackPlugin`.
 
 Webpack dev server serves statics from root app directory and bundles under `/dist/` path.
 
@@ -348,6 +342,7 @@ In case of issues, check `./example` folder which contain source of a similar ex
 
 ## License
 
-See the [LICENSE](https://github.com/heremaps/tin-terrain/blob/master/LICENSE) file in the root of this project for license details.
+See the [LICENSE](./LICENSE) file in the root of this project for license details about using `harp-terrain-datasource`.
 
-Copyright © 2018 HERE Europe B.V.
+For other use cases not listed in the license terms, please [contact us](https://developer.here.com/contact-us).
+Copyright © 2017-2019 HERE Europe B.V.
