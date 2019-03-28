@@ -56,7 +56,6 @@ module.exports = [
     },
     plugins: [
       new CopyWebpackPlugin([
-        { from: './src/assets', to: './assets' },
         { from: './node_modules/three', to: './three' }
       ]),
       new webpack.DefinePlugin({
