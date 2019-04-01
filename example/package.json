@@ -1,6 +1,6 @@
 {
   "name": "@here/harp-terrain-datasource-example",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "./src/app.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "@here/harp-mapview": "^0.8.1",
     "@here/harp-terrain-datasource": "github:heremaps/harp-terrain-datasource",
     "dat.gui": "^0.7.2",
-    "three": "^0.96.0"
+    "three": "^0.102.0"
   },
   "publishConfig": {
     "access": "public"

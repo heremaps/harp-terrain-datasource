@@ -14,7 +14,7 @@ const state = {
 const attributionTrigger = document.querySelector('.attribution-trigger')
 const attributionPopup = document.querySelector('.attribution-popup')
 const cesiumAttribution = document.querySelector('.cesium-attribution')
-const nextzenAttribution = document.querySelector('.nextzen-attribution')
+//const nextzenAttribution = document.querySelector('.nextzen-attribution')
 const sampleAttribution = document.querySelector('.sample-attribution')
 const cesiumIonLogo = document.querySelector('.cesium-ion-logo')
 
@@ -43,7 +43,7 @@ function updateUi (state) {
   attributionPopup.style.display = state.isAttributionPopupVisible ? 'block' : 'none'
   sampleAttribution.style.display = state.currentDataset === datasetList[0] ? 'block' : 'none'
   cesiumAttribution.style.display = state.currentDataset === datasetList[1] ? 'block' : 'none'
-  nextzenAttribution.style.display = state.currentDataset === datasetList[2] ? 'block' : 'none'
+  //nextzenAttribution.style.display = state.currentDataset === datasetList[2] ? 'block' : 'none'
 
   cesiumIonLogo.style.display = state.currentDataset === datasetList[1] ? 'block' : 'none'
 }

@@ -9,17 +9,17 @@ import * as THREE from 'three'
 import { MapView } from '@here/harp-mapview'
 import {
   GeoCoordinates,
-  hereTilingScheme,
-  mercatorTilingScheme,
+  hereTilingScheme,/*
+  mercatorTilingScheme,*/
   webMercatorTilingScheme
 } from '@here/harp-geoutils'
 import { MapControls } from '@here/harp-map-controls'
 import { TerrainDataSource } from '@here/harp-terrain-datasource'
 import { QUANTIZED_MESH_TILE_DECODER_ID } from '@here/harp-terrain-datasource/src/quantized-mesh/tile-decoder'
-import {
+/*import {
   PNG_TILE_DECODER_ID,
   DEM_ENCODINGS
-} from '@here/harp-terrain-datasource/src/png/tile-decoder'
+} from '@here/harp-terrain-datasource/src/png/tile-decoder'*/
 
 import config from './config'
 import {
@@ -29,7 +29,7 @@ import {
 import fetchCesiumWorldTerrainTile from './fetch-cesium-tile'
 import fetchSampleTile from './fetch-sample-tile'
 import getTileMaterial from './get-tile-material'
-import fetchNextzenTile from './fetch-nextzen-tile'
+//import fetchNextzenTile from './fetch-nextzen-tile'
 import './attribution-ui'
 
 const QUANTIZED_MESH_DECODER_URL = './dist/quantized-mesh-decoder.bundle.js'
@@ -91,7 +91,7 @@ function createSampleTilesDataSource (options) {
   })
 }
 
-function createPNGDataSource (options, decoderOptions) {
+/*function createPNGDataSource (options, decoderOptions) {
   return new TerrainDataSource({
     concurrentDecoderServiceName: PNG_TILE_DECODER_ID,
     concurrentDecoderScriptUrl: PNG_DECODER_URL,
@@ -100,7 +100,7 @@ function createPNGDataSource (options, decoderOptions) {
     getTileMaterial: (mapTile, decodedTile) => getTileMaterial(mapTile, decodedTile, options),
     decoderOptions
   })
-}
+}*/
 
 fetchWorldTerrainToken().then(worldTerrainToken => {
   const uiOptions = {
@@ -111,19 +111,19 @@ fetchWorldTerrainToken().then(worldTerrainToken => {
 
   const cesiumWorldTerrainDataSource = createCesiumWorldTerrainDataSource(worldTerrainToken, uiOptions)
   const sampleDataSource = createSampleTilesDataSource(uiOptions)
-  const nextzenDataSource = createPNGDataSource(uiOptions, {
+  /*const nextzenDataSource = createPNGDataSource(uiOptions, {
     widthSegments: 63,
     heightSegments: 63,
     demEncoding: DEM_ENCODINGS.terrarium
-  })
+  })*/
 
   mapView.addDataSource(cesiumWorldTerrainDataSource)
   mapView.addDataSource(sampleDataSource)
-  mapView.addDataSource(nextzenDataSource)
+  //mapView.addDataSource(nextzenDataSource)
 
   sampleDataSource.enabled = uiOptions.dataset === datasetList[0]
   cesiumWorldTerrainDataSource.enabled = uiOptions.dataset === datasetList[1]
-  nextzenDataSource.enabled = uiOptions.dataset === datasetList[2]
+  //nextzenDataSource.enabled = uiOptions.dataset === datasetList[2]
 
   mapView.setCameraGeolocationAndZoom(
     new GeoCoordinates(43.751997519592596, -110.73214288570348),
@@ -143,7 +143,7 @@ fetchWorldTerrainToken().then(worldTerrainToken => {
   datasetController.onChange(dataset => {
     sampleDataSource.enabled = dataset === datasetList[0]
     cesiumWorldTerrainDataSource.enabled = dataset === datasetList[1]
-    nextzenDataSource.enabled = dataset === datasetList[2]
+    //nextzenDataSource.enabled = dataset === datasetList[2]
 
     styleController.setValue(stylesList[0])
     styleController.updateDisplay()

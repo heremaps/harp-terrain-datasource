@@ -6,8 +6,8 @@
 
 export const datasetList = [
   'Grand Teton National Park (Quantized Mesh)',
-  'Cesium World Terrain (Quantized Mesh)',
-  'Nextzen Terrain (PNG)'
+  'Cesium World Terrain (Quantized Mesh)'/*,
+  'Nextzen Terrain (PNG)'*/
 ]
 
 export const stylesList = [

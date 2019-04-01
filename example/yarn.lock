@@ -46,7 +46,7 @@
     "@here/harp-mapview" "^0.8.1"
     "@tweenjs/tween.js" "^17.1.1"
 
-"@here/harp-mapview-decoder@^0.2.47":
+"@here/harp-mapview-decoder@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@here/harp-mapview-decoder/-/harp-mapview-decoder-0.3.1.tgz#84d24ba81a9fa2218d59e15591f451331d6caa78"
   integrity sha512-2GRNaGXTzopWWlc4fe5HFqyhi9Z+Kw1tOYUep38R4+FY4b8lZ88pEK1EMULU2hGHkQ527vrLB/pYU1d97A9YdA==
@@ -57,7 +57,7 @@
     "@here/harp-mapview" "^0.8.1"
     geojson-vt "^3.2.1"
 
-"@here/harp-mapview@^0.7.77", "@here/harp-mapview@^0.8.1":
+"@here/harp-mapview@^0.8.1":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@here/harp-mapview/-/harp-mapview-0.8.1.tgz#655f82dd0a6d71a444587c8a0eb0581aee9a39a4"
   integrity sha512-qDNVthknev6H9Yfvoe+NbcvAl62K6K3PVwlLVoTAJXHZGgTNp4ZpBD0dE2cTLpruhwhshGtskpzMvqANemD2QA==
@@ -80,10 +80,10 @@
 
 "@here/harp-terrain-datasource@github:heremaps/harp-terrain-datasource":
   version "0.7.1"
-  resolved "git+ssh://git@github.com/heremaps/harp-terrain-datasource.git#c87171e8e5f210f66b71153e9ac86ccebd555a40"
+  resolved "git+ssh://git@github.com/heremaps/harp-terrain-datasource.git#c6f3adff10488a955330e68f94583af06ea91115"
   dependencies:
-    "@here/harp-mapview" "^0.7.77"
-    "@here/harp-mapview-decoder" "^0.2.47"
+    "@here/harp-mapview" "^0.8.1"
+    "@here/harp-mapview-decoder" "^0.3.1"
     "@here/quantized-mesh-decoder" "github:heremaps/quantized-mesh-decoder#v1.1.3"
     gh-pages "^2.0.1"
     upng-js "^2.1.0"
@@ -699,9 +699,9 @@ camelcase@^4.1.0:
   integrity sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
 
 camelcase@^5.0.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.2.0.tgz#e7522abda5ed94cc0489e1b8466610e88404cf45"
-  integrity sha512-IXFsBS2pC+X0j0N/GE7Dm7j3bsEBp+oTpb7F50dwEVX7rf3IgwO9XatnegTsDtniKCUtEJH4fSU6Asw7uoVLfQ==
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.3.0.tgz#0a110882cbeba41f72f99fcf918f4a0a92a13ebf"
+  integrity sha512-Y05ICatFYPAfykDIB7VdwSJ0LUl1yq/BwO2OpyGGLjiRe1fgzTwVypPiWnzkGFOVFHXrCXUNBl86bpjBhZWSJg==
 
 chalk@^2.4.1:
   version "2.4.2"
@@ -988,9 +988,9 @@ cyclist@~0.2.2:
   integrity sha1-GzN5LhHpFKL9bW7WRHRkRE5fpkA=
 
 dat.gui@^0.7.2:
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/dat.gui/-/dat.gui-0.7.5.tgz#ab155825b0db88729c025697ef60c97fb87bef85"
-  integrity sha512-o6RnHVUHigLqH4DwsZCbFLAQw8NMWS3GP9EL4M4oOWj7E4qGIyVopyOWzyAwCwtuaiB27hq9F0qkHSNfjsp+ZQ==
+  version "0.7.6"
+  resolved "https://registry.yarnpkg.com/dat.gui/-/dat.gui-0.7.6.tgz#92182a0f2dc96c26910f888238d3839166d82f76"
+  integrity sha512-9Uqr4aQUvp9q5P2b4y6gK604HXafubOq578OmOS8mjrIkYrBP4EbQ9gz9YRXgyPh7aQi+b9H/jAG7EucmhYpSA==
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -2318,9 +2318,9 @@ media-typer@0.3.0:
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
 mem@^4.0.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/mem/-/mem-4.2.0.tgz#5ee057680ed9cb8dad8a78d820f9a8897a102025"
-  integrity sha512-5fJxa68urlY0Ir8ijatKa3eRz5lwXnRCTvo9+TbTGAuTFJOwpGcY0X05moBd0nW45965Njt4CDI2GFQoG8DvqA==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/mem/-/mem-4.3.0.tgz#461af497bc4ae09608cdb2e60eefb69bff744178"
+  integrity sha512-qX2bG48pTqYRVmDB37rn/6PT7LcR8T7oAX3bf99u1Tt1nzxYfxkgqDwUwolPlXweM0XzBOBFzSx4kfp7KP1s/w==
   dependencies:
     map-age-cleaner "^0.1.1"
     mimic-fn "^2.0.0"
@@ -2394,9 +2394,9 @@ mime@^2.3.1:
   integrity sha512-ikBcWwyqXQSHKtciCcctu9YfPbFYZ4+gbHEmE0Q8jzcTYQg5dHCr3g2wwAZjPoJfQVXZq6KXAjpXOTf5/cjT7w==
 
 mimic-fn@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.0.0.tgz#0913ff0b121db44ef5848242c38bbb35d44cabde"
-  integrity sha512-jbex9Yd/3lmICXwYT6gA/j2mNQGU48wCh/VzRd+/Y/PjYQtlg1gLMdZqvu9s/xH7qKvngxRObl56XZR609IMbA==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
+  integrity sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
@@ -2840,9 +2840,9 @@ p-try@^1.0.0:
   integrity sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
 
 p-try@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.1.0.tgz#c1a0f1030e97de018bb2c718929d2af59463e505"
-  integrity sha512-H2RyIJ7+A3rjkwKC2l5GGtU4H1vkxKCAGsWasNVd0Set+6i4znxbWy6/j16YDPJDWxhsgZiKAstMEP8wCdSpjA==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
+  integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
 pako@^1.0.5, pako@~1.0.5:
   version "1.0.10"
@@ -3165,9 +3165,9 @@ rc@^1.2.7:
     util-deprecate "~1.0.1"
 
 readable-stream@^3.0.6:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.2.0.tgz#de17f229864c120a9f56945756e4f32c4045245d"
-  integrity sha512-RV20kLjdmpZuTF1INEb9IA3L68Nmi+Ri7ppZqo78wj//Pn62fCoJyV9zalccNzDD/OuJpMG4f+pfMl8+L6QdGw==
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.3.0.tgz#cb8011aad002eb717bf040291feba8569c986fb9"
+  integrity sha512-EsI+s3k3XsW+fU8fQACLN59ky34AZ14LoeVZpYwmZvldCFo0r0gnelwF2TcMjLor/BTL5aDJVBMkss0dthToPw==
   dependencies:
     inherits "^2.0.3"
     string_decoder "^1.1.1"
@@ -3754,10 +3754,10 @@ terser@^3.16.1:
     source-map "~0.6.1"
     source-map-support "~0.5.10"
 
-three@^0.96.0:
-  version "0.96.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.96.0.tgz#6f48bb9e321506906ae4708bda69b0ffa808ee7f"
-  integrity sha512-tS+A5kelQgBblElc/E1G5zR3m6wNjbqmrf6OAjijuNJM7yoYQjOktPoa+Lglx73OTiTOJ3+Ff+pgWdOFt7cOhQ==
+three@^0.102.0:
+  version "0.102.1"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.102.1.tgz#fc08b6b11860cf59e8cd45b7e90e34d1d1a8cbd6"
+  integrity sha512-btHBdww/Es4vdBkB2GjTE9mpj0vy8tgtxkX7ne7uxySXV8zoGxWJv1N88BydxnCqvAfmD4ZUTqPeESO7oDgeOQ==
 
 through2@^2.0.0:
   version "2.0.5"
