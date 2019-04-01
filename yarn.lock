@@ -37,7 +37,7 @@
   dependencies:
     "@here/harp-utils" "^0.2.2"
 
-"@here/harp-mapview-decoder@^0.2.47":
+"@here/harp-mapview-decoder@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@here/harp-mapview-decoder/-/harp-mapview-decoder-0.3.1.tgz#84d24ba81a9fa2218d59e15591f451331d6caa78"
   integrity sha512-2GRNaGXTzopWWlc4fe5HFqyhi9Z+Kw1tOYUep38R4+FY4b8lZ88pEK1EMULU2hGHkQ527vrLB/pYU1d97A9YdA==
@@ -48,7 +48,7 @@
     "@here/harp-mapview" "^0.8.1"
     geojson-vt "^3.2.1"
 
-"@here/harp-mapview@^0.7.77", "@here/harp-mapview@^0.8.1":
+"@here/harp-mapview@^0.8.1":
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/@here/harp-mapview/-/harp-mapview-0.8.1.tgz#655f82dd0a6d71a444587c8a0eb0581aee9a39a4"
   integrity sha512-qDNVthknev6H9Yfvoe+NbcvAl62K6K3PVwlLVoTAJXHZGgTNp4ZpBD0dE2cTLpruhwhshGtskpzMvqANemD2QA==
