@@ -1,16 +1,16 @@
-# harp.gl Terrain Datasource [![Build Status](https://travis-ci.com/heremaps/harp-terrain-datasource.gl.svg?token=XqJjRxFbW25Pc73LNRB9&branch=master)](https://travis-ci.com/heremaps/harp-terrain-datasource.gl)
+# harp.gl Terrain Datasource 
 
-Render terrain data encoded using [Quantized Mesh](https://github.com/AnalyticalGraphicsInc/quantized-mesh) or [Mapzen Terrarium](https://mapzen.com/documentation/terrain-tiles/formats/#terrarium).
+[![Build Status](https://travis-ci.com/heremaps/harp-terrain-datasource.gl.svg?token=XqJjRxFbW25Pc73LNRB9&branch=master)](https://travis-ci.com/heremaps/harp-terrain-datasource.gl)
 
-For installation, run:
+The `harp.gl` Terrain Datasource is a module of [harp.gl](https://github.com/heremaps/harp.gl) to render terrain data encoded using [Quantized Mesh](https://github.com/AnalyticalGraphicsInc/quantized-mesh) or [Mapzen Terrarium](https://mapzen.com/documentation/terrain-tiles/formats/#terrarium).
+
+![Terrain with partially overlaid wireframe](./harp-terrain-datasource.png)
+
+To install, run:
 
 ```bash
 yarn add @here/harp-terrain-datasource
 ```
-
-Terrain Datasource is a module of [harp.gl](https://github.com/heremaps/harp.gl) renderer.
-
-See [TIN Terrain](https://github.com/heremaps/tin-terrain) for generating tiles in Quantized Mesh format.
 
 ### See Also
 
