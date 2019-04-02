@@ -85,10 +85,12 @@ ImageBitmapLoader.prototype = {
 
 			if ( onError ) onError( e );
 
-			scope.manager.itemEnd( url );
 			scope.manager.itemError( url );
+			scope.manager.itemEnd( url );
 
 		} );
+
+		scope.manager.itemStart( url );
 
 	},
 
