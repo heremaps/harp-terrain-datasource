@@ -2,88 +2,89 @@
 # yarn lockfile v1
 
 
-"@here/harp-datasource-protocol@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-datasource-protocol/-/harp-datasource-protocol-0.3.1.tgz#e08dbd5a2920e20bc35e838e351d4ab115ab6076"
-  integrity sha512-kP9+8qfTkPNYAM5pEDcH1va+FuPBrQXSt7AyvEEv95daS0eSGru3ulJqpB9PDrbO25F6EkHIGda/buxvDTwJhQ==
+"@here/harp-datasource-protocol@^0.3.1", "@here/harp-datasource-protocol@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-datasource-protocol/-/harp-datasource-protocol-0.3.2.tgz#ffdbd75995572c5f3ef5815f6954308fcff336f2"
+  integrity sha512-iLprG6Xyo1/Z0/jTv7QkBdYlc7bvYh+pcEQlMyZkrpZJM8zRRfFN28SeG1kNYe6vC8JzFhdBTIexX3BwPbrTMg==
   dependencies:
-    "@here/harp-geoutils" "^0.3.1"
-    "@here/harp-lines" "^0.2.1"
-    "@here/harp-utils" "^0.2.2"
+    "@here/harp-geoutils" "^0.3.2"
+    "@here/harp-lines" "^0.2.2"
+    "@here/harp-utils" "^0.2.3"
 
-"@here/harp-fetch@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-fetch/-/harp-fetch-0.3.1.tgz#079f6765417741be4659d6a6afd7b588fee31562"
-  integrity sha512-Mqept09HuWyiLuAY8+VkyAJRQDvF003zsURgLJAsX8mbfHYHY5ycFb1jKtX8YSYcqchA8C9aV05mtvadzpsLHQ==
+"@here/harp-fetch@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-fetch/-/harp-fetch-0.3.2.tgz#878a6319d7c05c37b03c256b9cbc18f2cd546f84"
+  integrity sha512-/36bRbkHFsyW7roWiberedoPSydbKxmMGG5lVc0GfPxFKUucqmgNuFmXEgaNsNRyE+c44bG3q92MU7MfwC2qvQ==
   dependencies:
     node-fetch "^2.2.0"
 
-"@here/harp-geoutils@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-geoutils/-/harp-geoutils-0.3.1.tgz#b9086e4bcb4871d55dbd0312771bc9911afc687a"
-  integrity sha512-x0HwtgV7m3y3TpANI6P8sHycNhQf1Wh1IWaiE8UQh7J4mb0pvysPWzjAC1a7A5fUPlxILzzIOs3sd34PIi6kvA==
+"@here/harp-geoutils@^0.3.1", "@here/harp-geoutils@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-geoutils/-/harp-geoutils-0.3.2.tgz#15892e3b1f15a19aa0fe3d2018bcc911b42a6308"
+  integrity sha512-Dhc5PwrK159qVpe3Q48G+UXHvNL+t3CQ6ktcoTaASNpJUFEtAqUNH4vu7Fc+itITLDiZWiLbIpVDVJI9QjMPqw==
 
-"@here/harp-lines@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-lines/-/harp-lines-0.2.1.tgz#df315ddd89b68fdb36f631c1f6a83b8c847e7017"
-  integrity sha512-jDAsQzWcuJwVHSnrk6VVsmw/ae24qofzygmAb29I62fM8ruQ1ptisMLkKVGOgNaYhYUEPlRmt/1RJiEmjZfZCQ==
+"@here/harp-lines@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-lines/-/harp-lines-0.2.2.tgz#c09b3bdf2d43b8faaec42a037a7d76a4834988af"
+  integrity sha512-wYSwelF9dlKQxyOdsoqZqc35RYyXuGWxFusCTJh7WP66XXoTKE18+Td5q0n3kJ3sB2kZraz9qVfRezLvEf837A==
   dependencies:
-    "@here/harp-materials" "^0.2.1"
+    "@here/harp-materials" "^0.2.2"
 
-"@here/harp-lrucache@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-lrucache/-/harp-lrucache-0.2.1.tgz#1f62469cc30d0ec6dd041194f67edb8d6b94f5db"
-  integrity sha512-Z+71NxCevt53ND6oHIu/lLQIqDS1uhNZWsfeHPTMrJXceTxvxuWKiHD2xhMA1UaQdfSdeUHtMmfyQ5jscppgnA==
+"@here/harp-lrucache@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-lrucache/-/harp-lrucache-0.2.2.tgz#daa3a2eba9e14fb4abbc80be8f4f0ac7774d3d89"
+  integrity sha512-bN3+dGjtzwVGNp5hiFTUlJgi/rvOdpMd/pkP8J2ilTmBmSaHQMdbiu0XXyWIyLF+BR5lqCZoBHIkD/Z+XKrJpw==
   dependencies:
-    "@here/harp-utils" "^0.2.2"
+    "@here/harp-utils" "^0.2.3"
 
 "@here/harp-mapview-decoder@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-mapview-decoder/-/harp-mapview-decoder-0.3.1.tgz#84d24ba81a9fa2218d59e15591f451331d6caa78"
-  integrity sha512-2GRNaGXTzopWWlc4fe5HFqyhi9Z+Kw1tOYUep38R4+FY4b8lZ88pEK1EMULU2hGHkQ527vrLB/pYU1d97A9YdA==
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-mapview-decoder/-/harp-mapview-decoder-0.3.2.tgz#b9cc026821a789bfcbe7c76f736dd7d5dabf19ad"
+  integrity sha512-ULw4jolMnSOM4EFS0mplzryJb+L2hmliAqIf9yHIL9uOmuG3PgM2yi6u9XRZXUFrM9xeASouNPJKCm4qwL5Xog==
   dependencies:
-    "@here/harp-datasource-protocol" "^0.3.1"
-    "@here/harp-fetch" "^0.3.1"
-    "@here/harp-geoutils" "^0.3.1"
-    "@here/harp-mapview" "^0.8.1"
+    "@here/harp-datasource-protocol" "^0.3.2"
+    "@here/harp-fetch" "^0.3.2"
+    "@here/harp-geoutils" "^0.3.2"
+    "@here/harp-mapview" "^0.8.2"
     geojson-vt "^3.2.1"
 
-"@here/harp-mapview@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-mapview/-/harp-mapview-0.8.1.tgz#655f82dd0a6d71a444587c8a0eb0581aee9a39a4"
-  integrity sha512-qDNVthknev6H9Yfvoe+NbcvAl62K6K3PVwlLVoTAJXHZGgTNp4ZpBD0dE2cTLpruhwhshGtskpzMvqANemD2QA==
+"@here/harp-mapview@^0.8.1", "@here/harp-mapview@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-mapview/-/harp-mapview-0.8.2.tgz#3740f349ef8a9048c235c1f2166802ae5fe46be4"
+  integrity sha512-kmIZQtSPaJWGjCDcXaWjENcbjM3aufLNbebbSe5938Qtx4WwjCJU0FYLgrAMHzFOEK3LIFQqWCcSGRfzfFKiUg==
   dependencies:
-    "@here/harp-datasource-protocol" "^0.3.1"
-    "@here/harp-geoutils" "^0.3.1"
-    "@here/harp-lines" "^0.2.1"
-    "@here/harp-lrucache" "^0.2.1"
-    "@here/harp-materials" "^0.2.1"
-    "@here/harp-text-canvas" "^0.2.1"
-    "@here/harp-utils" "^0.2.2"
+    "@here/harp-datasource-protocol" "^0.3.2"
+    "@here/harp-geoutils" "^0.3.2"
+    "@here/harp-lines" "^0.2.2"
+    "@here/harp-lrucache" "^0.2.2"
+    "@here/harp-materials" "^0.2.2"
+    "@here/harp-text-canvas" "^0.2.2"
+    "@here/harp-utils" "^0.2.3"
     rtree "^1.4.2"
 
-"@here/harp-materials@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-materials/-/harp-materials-0.2.1.tgz#0264ff2fc46c3f110206589363a62dd6e98a72a9"
-  integrity sha512-OHvuNUhhwr00j7T2oaZsSD+6/me4t399AzBTYYqcr+wurFPcgFk4i86L4jvlOofOb6Dgotj1624Fr+FRjHJI/A==
-  dependencies:
-    "@here/harp-utils" "^0.2.2"
-
-"@here/harp-text-canvas@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@here/harp-text-canvas/-/harp-text-canvas-0.2.1.tgz#76366762f2f89e6bbffb7ce1acd46b51333017a0"
-  integrity sha512-ImGjExx01sjw1LblPrLpfFB+D15wUHXlEmClwLuvpg2MN3GSi+Q85PGciU8xrLsqBQkaXpXx6t7fswPd8LvFzw==
-  dependencies:
-    "@here/harp-lrucache" "^0.2.1"
-
-"@here/harp-utils@^0.2.2":
+"@here/harp-materials@^0.2.2":
   version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@here/harp-utils/-/harp-utils-0.2.2.tgz#d838a66e5829cd4aece8d4657c8d74a4bd56548b"
-  integrity sha512-ZkrVCa+g/Jc2UxAOtLGfT9Pm88Jj66zMGwVQSphFKKvxr6/fComuZJGQ5kV3eyhAGpEABAFQHQrcxovsblWDew==
+  resolved "https://registry.yarnpkg.com/@here/harp-materials/-/harp-materials-0.2.2.tgz#3a17a83e2ba4acffb4b63909f8e89c205bd7498d"
+  integrity sha512-UFpNKQUkHLky8Qv2NUsebZadm/Xpg3em4+2SPISMgPTIw4wh1RWxyBYii/18fhPi3q4CWBUQVt/pFgNk8NbU7A==
+  dependencies:
+    "@here/harp-utils" "^0.2.3"
 
-"@here/quantized-mesh-decoder@github:heremaps/quantized-mesh-decoder#v1.1.3":
+"@here/harp-text-canvas@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@here/harp-text-canvas/-/harp-text-canvas-0.2.2.tgz#54083ed61d6e8485da78d86276f134524a5435a1"
+  integrity sha512-pCX9Mzly1yd9ker22sxkk5XU8VdQY2q7MbkE6z7WtPV36Lcgj4nDmgEVJeHgugD1V3c+M0J2ZUywiEUEcHzg1g==
+  dependencies:
+    "@here/harp-lrucache" "^0.2.2"
+
+"@here/harp-utils@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@here/harp-utils/-/harp-utils-0.2.3.tgz#df6c28dafc0e623e802d014044cc95b9f6e613c7"
+  integrity sha512-knzSuhJhzLDZVdo/CrFj6rN2ElQ6pkgisvbLcnABf7Dr0grC0nRLYHASlc+D/xmEPMFYwAf7ByPB9zec6FelGw==
+
+"@here/quantized-mesh-decoder@^1.1.3":
   version "1.1.3"
-  resolved "https://codeload.github.com/heremaps/quantized-mesh-decoder/tar.gz/0010dedd47115375b8808a1ace3f633bf6c360d6"
+  resolved "https://registry.yarnpkg.com/@here/quantized-mesh-decoder/-/quantized-mesh-decoder-1.1.3.tgz#0e47f87628434f267281eb1c36e62d3e52f8994b"
+  integrity sha512-a0O+erOOTWsCvFKEmUHaDt+f24BoGFXAw9gifXn275QJTKr+1LMUza6oWQNCJ/HU2oQ197ysPtbSGvFv3AYl2w==
 
 "@types/three@^0.92.21":
   version "0.92.25"
@@ -287,9 +288,9 @@ color-name@1.1.3:
   integrity sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
 
 commander@^2.18.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
-  integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
+  integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -452,9 +453,9 @@ eslint-import-resolver-node@^0.3.1:
     resolve "^1.5.0"
 
 eslint-module-utils@^2.1.1:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.3.0.tgz#546178dab5e046c8b562bbb50705e2456d7bda49"
-  integrity sha512-lmDJgeOOjk8hObTysjqH7wyMi+nsHwwvfBykwfhjR1LNdd7C2uFJBvx4OpWYpXOw4df1yE1cDEVd1yLHitk34w==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/eslint-module-utils/-/eslint-module-utils-2.4.0.tgz#8b93499e9b00eab80ccb6614e69f03678e84e09a"
+  integrity sha512-14tltLm38Eu3zS+mt0KvILC3q8jyIAH518MlG+HO0p+yK885Lb1UHTY/UgR91eOyGdmxAPb+OLoW4znqIT6Ndw==
   dependencies:
     debug "^2.6.8"
     pkg-dir "^2.0.0"
@@ -730,9 +731,9 @@ gh-pages@^2.0.1:
     rimraf "^2.6.2"
 
 glob@^7.0.3, glob@^7.0.5, glob@^7.1.2, glob@^7.1.3:
-  version "7.1.3"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
-  integrity sha512-vcfuiIxogLV4DlGBHIUOwI0IbrJ8HWPc4MU7HzviGeNho/UJDfi6B5p3sHeWIQ0KGIU0Jpxi5ZHxemQfLkkAwQ==
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
+  integrity sha512-hkLPepehmnKk41pUGm3sYxoFs/umurYfYJCerbXEyFIWcAzvpipAgVkBqqT9RBKMGjnq6kMuyYwha6csxbiM1A==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -742,9 +743,9 @@ glob@^7.0.3, glob@^7.0.5, glob@^7.1.2, glob@^7.1.3:
     path-is-absolute "^1.0.0"
 
 globals@^11.0.1:
-  version "11.11.0"
-  resolved "https://registry.yarnpkg.com/globals/-/globals-11.11.0.tgz#dcf93757fa2de5486fbeed7118538adf789e9c2e"
-  integrity sha512-WHq43gS+6ufNOEqlrDBxVEbb8ntfXrfAUU2ZOpCxrBdGKW3gyv8mCxAfIBD0DroPKGrJ2eSsXsLtY9MPntsyTw==
+  version "11.12.0"
+  resolved "https://registry.yarnpkg.com/globals/-/globals-11.12.0.tgz#ab8795338868a0babd8525758018c2a7eb95c42e"
+  integrity sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==
 
 globby@^6.1.0:
   version "6.1.0"
@@ -919,9 +920,9 @@ js-tokens@^3.0.2:
   integrity sha1-mGbfOVECEw449/mWvOtlRDIJwls=
 
 js-yaml@^3.9.1:
-  version "3.13.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.0.tgz#38ee7178ac0eea2c97ff6d96fff4b18c7d8cf98e"
-  integrity sha512-pZZoSxcCYco+DIKBTimr67J6Hy+EYGZDY/HCWC+iAEA9h1ByhMXAIVUXMcMFpOCxQ/xjXmPI2MkDL5HRm5eFrQ==
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
+  integrity sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -949,9 +950,9 @@ jsonfile@^4.0.0:
     graceful-fs "^4.1.6"
 
 jsx-ast-utils@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.0.1.tgz#e801b1b39985e20fffc87b40e3748080e2dcac7f"
-  integrity sha1-6AGxs5mF4g//yHtA43SAgOLcrH8=
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/jsx-ast-utils/-/jsx-ast-utils-2.1.0.tgz#0ee4e2c971fb9601c67b5641b71be80faecf0b36"
+  integrity sha512-yDGDG2DS4JcqhA6blsuYbtsT09xL8AoLuUR2Gb5exrw7UEM19sBcOTq+YBBhrNbl0PUC4R4LnFu+dHg2HKeVvA==
   dependencies:
     array-includes "^3.0.3"
 
@@ -1061,9 +1062,9 @@ natural-compare@^1.4.0:
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
 node-fetch@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.3.0.tgz#1a1d940bbfb916a1d3e0219f037e89e71f8c5fa5"
-  integrity sha512-MOd8pV3fxENbryESLgVIeaGKrdl+uaYhCSSVkjeOb/31/njTpcis5aWfdqgNlHIrKOLRbMnfPINPOML2CIFeXA==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.5.0.tgz#8028c49fc1191bba56a07adc6e2a954644a48501"
+  integrity sha512-YuZKluhWGJwCcUu4RlZstdAxr8bFfOVHakc1mplwHkk8J+tqM1Y5yraYvIUpeX8aY7+crCwiELJq7Vl0o0LWXw==
 
 normalize-package-data@^2.3.2:
   version "2.5.0"
@@ -1091,9 +1092,9 @@ object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   integrity sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
 
 object-keys@^1.0.12:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.0.tgz#11bd22348dd2e096a045ab06f6c85bcc340fa032"
-  integrity sha512-6OO5X1+2tYkNyNEx6TsCxEqFfRWaqx6EtMiSbGrw8Ob8v9Ne+Hl8rBAgLBZn5wjEz3s/s6U1WXFUFOcxxAwUpg==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
+  integrity sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==
 
 once@^1.3.0:
   version "1.4.0"
@@ -1334,9 +1335,9 @@ resolve-from@^1.0.0:
   integrity sha1-Jsv+k10a7uq7Kbw/5a6wHpPUQiY=
 
 resolve@^1.10.0, resolve@^1.3.3, resolve@^1.5.0:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
-  integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.1.tgz#664842ac960795bbe758221cdccda61fb64b5f18"
+  integrity sha512-KuIe4mf++td/eFb6wkaPbMDnP6kObCaEtIDuHOUED6MNUo4K670KZUHuuvYPZDxNF0WVLw49n06M2m2dXphEzA==
   dependencies:
     path-parse "^1.0.6"
 
@@ -1452,9 +1453,9 @@ spdx-expression-parse@^3.0.0:
     spdx-license-ids "^3.0.0"
 
 spdx-license-ids@^3.0.0:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.3.tgz#81c0ce8f21474756148bbb5f3bfc0f36bf15d76e"
-  integrity sha512-uBIcIl3Ih6Phe3XHK1NqboJLdGfwr1UN3k6wSD1dZpmPsIkb8AGNbZYJ1fOBk834+Gxy8rpfDxrS6XLEMZMY2g==
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.4.tgz#75ecd1a88de8c184ef015eafb51b5b48bfd11bb1"
+  integrity sha512-7j8LYJLeY/Yb6ACbQ7F76qy5jHkp0U6jgBfJsk97bwWlVUnUWsAgpyaCvo17h0/RQGnQ036tVDomiwoI4pDkQA==
 
 sprintf-js@~1.0.2:
   version "1.0.3"
