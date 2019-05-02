@@ -36,7 +36,7 @@
   "dependencies": {
     "@here/harp-mapview": "^0.8.1",
     "@here/harp-mapview-decoder": "^0.3.1",
-    "@here/quantized-mesh-decoder": "github:heremaps/quantized-mesh-decoder#v1.1.3",
+    "@here/quantized-mesh-decoder": "^1.1.3",
     "gh-pages": "^2.0.1",
     "upng-js": "^2.1.0"
   },
