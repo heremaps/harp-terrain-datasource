@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com:heremaps/harp-terrain-datasource.git"
+    "url": "https://github.com/heremaps/harp-terrain-datasource.git"
   },
   "files": [
     "src",
