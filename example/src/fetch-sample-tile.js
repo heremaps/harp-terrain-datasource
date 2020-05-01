@@ -9,7 +9,7 @@ export default function fetchSampleTile (tileKey) {
   const row = tileKey.rowCount() - tileKey.row - 1
   const level = tileKey.level
 
-  const url = `https://nikgarmash.com/grand-teton-tiles/tiles/${level}/${column}/${row}.terrain`
+  const url = `https://mykolaharmash.github.io/grand-teton-tiles/tiles/${level}/${column}/${row}.terrain`
 
   return window.fetch(url)
     .then(res => {
