@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017-2019 HERE Europe B.V.
+ * Copyright © 2017-2020 HERE Europe B.V.
  * Licensed under Apache 2.0, see full license in LICENSE
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -14,7 +14,7 @@ export default function fetchCesiumWorldTerrainTile (tileKey, worldTerrainToken)
 
   return window.fetch(url, {
     headers: {
-      'Accept': `${qmContentType};access_token=${worldTerrainToken};`
+      Accept: `${qmContentType};access_token=${worldTerrainToken};`
     }
   })
     .then(res => {

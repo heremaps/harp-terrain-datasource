@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017-2019 HERE Europe B.V.
+ * Copyright © 2017-2020 HERE Europe B.V.
  * Licensed under Apache 2.0, see full license in LICENSE
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -73,7 +73,7 @@ export class QuantizedMeshTileDecoder {
 
     Object.keys(decodedTile.extensions).forEach(key => {
       if (key === 'vertexNormals' && decodedTile.extensions[key].byteLength > 0) {
-        let array = new Uint8Array(decodedTile.extensions[key])
+        const array = new Uint8Array(decodedTile.extensions[key])
         vertexAttributes.push({
           name: 'octNormal',
           type: 'float',
