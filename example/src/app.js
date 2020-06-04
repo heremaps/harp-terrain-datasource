@@ -1,5 +1,5 @@
 /*
- * Copyright © 2017-2019 HERE Europe B.V.
+ * Copyright © 2017-2020 HERE Europe B.V.
  * Licensed under Apache 2.0, see full license in LICENSE
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -131,7 +131,7 @@ fetchWorldTerrainToken().then(worldTerrainToken => {
   )
   mapView.camera.rotateX(THREE.Math.degToRad(35))
 
-  const gui = new dat.GUI({width: 300})
+  const gui = new dat.GUI({ width: 300 })
   const datasetController = gui.add(uiOptions, 'dataset', datasetList)
   const styleController = gui.add(uiOptions, 'style', stylesList)
 
@@ -157,7 +157,7 @@ fetchWorldTerrainToken().then(worldTerrainToken => {
       .forEach(option => { option.disabled = dataset === datasetList[1] })
 
     updateTiles()
-    window.postMessage({type: 'dataset-change', dataset}, '*')
+    window.postMessage({ type: 'dataset-change', dataset }, '*')
   })
   styleController.onChange(updateTiles)
 })
