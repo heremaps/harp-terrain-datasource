@@ -41,7 +41,7 @@
     "upng-js": "^2.1.0"
   },
   "peerDependencies": {
-    "three": "^0.117.1"
+    "three": "^0.137.0"
   },
   "devDependencies": {
     "@here/harp-datasource-protocol": "^0.16.0",
@@ -49,7 +49,7 @@
     "@types/three": "^0.103.2",
     "dotenv-safe": "^8.2.0",
     "standard": "^14.3.4",
-    "three": "^0.117.1"
+    "three": "^0.137.0"
   },
   "publishConfig": {
     "access": "public"
